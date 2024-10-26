@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Color of Objects in Picture</title>
+    <style>
+        body {
+            background-image: url('static/background.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 5px; /* Further reduced margin to move title up */
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* White background for title */
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-family: 'Georgia', serif; /* More elegant font */
+            color: #333; /* Dark text color */
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px; /* Add space above the form */
+        }
+
+        input[type="file"], select {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 90%; /* Make inputs full width */
+        }
+
+        select {
+            margin-top: 10px; /* Add space above the select box */
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px; /* Equal spacing around buttons */
+            width: 95%; /* Make the button full width */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        img {
+            margin-top: 20px;
+            border: 5px solid white;
+            border-radius: 10px;
+            max-width: 50%; /* Reduced the width of the output image */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <h1>Convert Color of Objects in Picture</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br>
+        <label for="color">Select color:</label>
+        <select name="color" id="color">
+            <option value="đỏ">Red</option>
+            <option value="xanh">Blue</option>
+            <option value="lục">Green</option>
+            <option value="tím">Purple</option>
+            <option value="vàng">Yellow</option>
+            <option value="cam">Orange</option>
+            <option value="hồng">Pink</option>
+            <option value="nâu">Brown</option>
+            <option value="xám">Grey</option>
+            <option value="đen">Black</option>
+        </select>
+        <br>
+        <input type="submit" value="Chuyển đổi">
+    </form>
+
+    {% if output_image %}
+    <h2>Convert Color:</h2>
+    <img src="{{ url_for('static', filename=output_image) }}" alt="Convert Color" width="800" height="auto">
+    {% endif %}
+</body>
+</html>
