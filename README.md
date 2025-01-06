@@ -1,7 +1,3 @@
-# Introduction
-### By uploading your photo to the web and choosing from the available colors in the list, you can change the color of the objects in your picture with the same color you choose. 
-### **Note**: the picture you upload to the web must have a white background, because this project only supports picture with white backgrounds.
-
 ![Mô tả ảnh](/Example.jpg)
 <br/><br/>
 # How to use?
